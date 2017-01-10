@@ -1,0 +1,7 @@
+config.yaml
+tryit
+tryit.sh
+*.gem
+lib/doc
+
+
