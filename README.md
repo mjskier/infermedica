@@ -48,10 +48,16 @@ require 'yaml'
 access = YAML.load(File.read('.config.yaml'))
 api = Infermedica::Api.new(access)
 ```
+
 ## Examples
 
 The **examples** directory has some examples to get you started. They all assume that you have a **config.yaml**
 in the same directory. Just create one with your own **api_id** and **api_key** and you should be able to just invoke
 ruby on each example.
 
+## Legal
+
+The Infermedica REST API is copyrighted by [Infermedica](http://infermedica.com).
+
+The Ruby code itself is released under the [MIT](https://opensource.org/licenses/MIT) license.
 
