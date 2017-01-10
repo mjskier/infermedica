@@ -42,6 +42,14 @@ require_relative 'infermedica/connection'
 
 module Infermedica
 
+  # Exceptions
+
+  # HTTP error raised when we don't get the expected result from an API call
+  class HttpError < StandardError; end
+
+  # Missing field or field not set in a request
+  class MissingField < StandardError; end
+
   # Api defines all operations available from the REST API
 
   class Api
@@ -100,6 +108,8 @@ module Infermedica
     # Submit a diagnosis object to get an explanation
     # See examples/explain.rb for an example
     def explain(req, args = {})
+      raise Infermedica::MissingField, 'target must be set' if
+        req.target.nil?
       response = @connection.post('/explain', req.to_json, args)
     end
 

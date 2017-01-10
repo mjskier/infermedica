@@ -18,6 +18,16 @@ req.add_symptom('s_216', 'present')
 req.add_symptom('s_9', 'present')
 req.add_symptom('s_188', 'present')
 
+# Can't get a explaination unless we have a target
+
+begin
+  resp = api.explain(req)
+rescue Infermedica::MissingField => e
+  puts
+  puts e
+  puts
+end
+  
 # Add a target condition
 
 req.add_target('c_371')

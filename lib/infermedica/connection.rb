@@ -1,8 +1,5 @@
 module Infermedica
 
-  # HTTP error raised when we don't get the expected result from an API call
-  class HttpError < StandardError; end
-
   # = Connection
   # handles the http communication
   # No assumption is made about content or return values

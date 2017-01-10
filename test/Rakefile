@@ -1,0 +1,9 @@
+task :default => :test
+task :test do
+  Dir.glob('./unit/*.rb').each do |f| 
+    puts
+    puts "Running test on #{f}"
+    puts
+    ruby f
+  end
+end

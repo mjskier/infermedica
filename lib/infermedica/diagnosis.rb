@@ -6,6 +6,9 @@ module Infermedica
   # See examples/diagnosis.rb and examples/explain.rb for example use
 
   class Diagnosis
+    attr_accessor :sex, :age, :symptoms, :case, :extras, :extras_permanent,
+                  :lab_tests, :pursued, :risk_factors,
+                  :case_id, :target
 
     def initialize(args)
       raise ArgumentError, 'Patient sex is required' unless args.key?(:sex)
@@ -24,7 +27,6 @@ module Infermedica
       
       @extras = {}
       @extras_permanent = {}
-
     end
 
     # Add a symptom to the list of symptom kept in this object
@@ -42,7 +44,7 @@ module Infermedica
       @pursued.push(*args)
     end
 
-    # Add a target condition that will be used by the /explain endpoint
+    # Set a target condition that will be used by the /explain endpoint
     # v: The target condition (for example 'c_371')
 
     def add_target(v)
