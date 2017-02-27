@@ -105,6 +105,12 @@ module Infermedica
       response = @connection.post('/diagnosis', diag.to_json)
     end
 
+    # Submit a diagnosis object to get a triage
+    # See examples/triage.rb for an example
+    def triage(diag)
+      response = @connection.post('/triage', diag.to_json)
+    end
+
     # Submit a diagnosis object to get an explanation
     # See examples/explain.rb for an example
     def explain(req, args = {})

@@ -2,7 +2,7 @@ module Infermedica
 
   # = Diagnosis
   #
-  # Interface to the /diagnosis and /explain endpoints
+  # Interface to the /diagnosis, /triage, and /explain endpoints
   # See examples/diagnosis.rb and examples/explain.rb for example use
 
   class Diagnosis
