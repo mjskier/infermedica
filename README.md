@@ -1,3 +1,5 @@
+[![Gem Version](https://badge.fury.io/rb/infermedica.svg)](https://badge.fury.io/rb/infermedica)
+
 # infermedica
 Ruby interface to the infermedica REST API
 
@@ -45,7 +47,7 @@ In **your script**
 require 'infermedica'
 require 'yaml'
 
-access = YAML.load(File.read('.config.yaml'))
+access = YAML.load(File.read('./config.yaml'))
 api = Infermedica::Api.new(access)
 ```
 
